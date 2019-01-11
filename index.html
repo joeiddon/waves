@@ -20,6 +20,9 @@ input {
 	width: 100%;
 	margin: 0;
 }
+hr {
+	margin: 0;
+}
 </style>
 </head>
 
@@ -37,6 +40,7 @@ input {
 </div>
 <div id='d2'></div>
 <div id='d3'>
+<hr>
 <br>wavelength</p>
 <input type='range' min=0 max=1 step=0.05 oninput='wavelength2=this.value;restart();'></input>
 <p>velocity<p>
@@ -45,8 +49,11 @@ input {
 <input type='range' min=0 max=1 step=0.05 oninput='amplitude2=this.value;restart();'></input>
 </div>
 <div id='d4'></div>
+<hr>
 <p>phase difference</p>
 <input type='range' min=0 max=1 value=0 step=0.02 oninput='phase_diff=parseFloat(this.value);restart();'></input>
+<hr>
+<p>source code: <a href='https://github.com/joeiddon/waves'>https://github.com/joeiddon/waves</a></p>
 </div>
 <script>
 'use strict';
@@ -119,7 +126,6 @@ function update(time_now){
 }
 
 requestAnimationFrame(update);
-
 
 </script>
 </body>
