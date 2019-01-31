@@ -137,7 +137,7 @@ function get_wave(time, wavelength, amplitude, velocity, phase_diff){
     let angular_frequency = 2*Math.PI*frequency; //angular frequency = 2*pi*f
     let phi = Math.PI * 2 * phase_diff; //phase difference
     for (let x = 0; x < 1; x += 1 / samples){
-        wave.push(amplitude * Math.sin(wave_number * x - angular_frequency * time + phi));
+        wave.push(amplitude * Math.sin(wave_number * x - angular_frequency * time - phi));
     }
     return wave;
 }
