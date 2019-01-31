@@ -85,7 +85,7 @@ let velocity2 = 0;
 let samples = 500;
 let time_scale_factor = 1;
 
-let phase_diff = 0;
+let phase_diff = 0; //from 0-1, mapped to 0-2PI
 
 let start_time = 0;
 function update(time_now){
@@ -135,7 +135,7 @@ function get_wave(time, wavelength, amplitude, velocity, phase_diff){
     let frequency = velocity / wavelength; //from v = f*lambda => f = v / lambda
     let wave_number = 2 * Math.PI / wavelength; //k
     let angular_frequency = 2*Math.PI*frequency; //angular frequency = 2*pi*f
-    let phi = (Math.PI * 2 / wavelength) * phase_diff; //phase difference
+    let phi = Math.PI * 2 * phase_diff; //phase difference
     for (let x = 0; x < 1; x += 1 / samples){
         wave.push(amplitude * Math.sin(wave_number * x - angular_frequency * time + phi));
     }
